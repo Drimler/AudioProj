@@ -1,0 +1,1343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AudioCfg</class>
+ <widget class="QMainWindow" name="AudioCfg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>656</width>
+    <height>601</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AudioCfg</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>3</number>
+    </property>
+    <property name="topMargin">
+     <number>3</number>
+    </property>
+    <property name="rightMargin">
+     <number>3</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>650</width>
+         <height>536</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="mouseTracking">
+           <bool>false</bool>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="tabPosition">
+           <enum>QTabWidget::North</enum>
+          </property>
+          <property name="tabShape">
+           <enum>QTabWidget::Rounded</enum>
+          </property>
+          <property name="currentIndex">
+           <number>2</number>
+          </property>
+          <property name="elideMode">
+           <enum>Qt::ElideNone</enum>
+          </property>
+          <property name="documentMode">
+           <bool>false</bool>
+          </property>
+          <property name="tabsClosable">
+           <bool>false</bool>
+          </property>
+          <property name="movable">
+           <bool>false</bool>
+          </property>
+          <widget class="QWidget" name="tab">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>449</height>
+            </size>
+           </property>
+           <attribute name="title">
+            <string>Tab 1</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout">
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="text">
+                   <string>Keyword</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="lineEdit"/>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="findButton">
+                  <property name="text">
+                   <string>Find</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QTextEdit" name="textEdit"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_2">
+           <attribute name="title">
+            <string>Tab 2</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QScrollArea" name="scrollArea_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Plain</enum>
+              </property>
+              <property name="lineWidth">
+               <number>0</number>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_2">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>644</width>
+                 <height>510</height>
+                </rect>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_4">
+                <property name="leftMargin">
+                 <number>9</number>
+                </property>
+                <property name="topMargin">
+                 <number>9</number>
+                </property>
+                <property name="rightMargin">
+                 <number>9</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>9</number>
+                </property>
+                <property name="spacing">
+                 <number>6</number>
+                </property>
+                <item row="0" column="0">
+                 <layout class="QGridLayout" name="gridLayout_2">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="modeLabel">
+                    <property name="text">
+                     <string>Mode</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="deviceLabel">
+                    <property name="text">
+                     <string>Device</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QComboBox" name="modeBox">
+                    <item>
+                     <property name="text">
+                      <string>Input</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Output</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="deviceBox"/>
+                  </item>
+                  <item row="2" column="0" colspan="2">
+                   <widget class="QTabWidget" name="tabWidget_2">
+                    <property name="currentIndex">
+                     <number>2</number>
+                    </property>
+                    <widget class="QWidget" name="testFormatTab">
+                     <attribute name="title">
+                      <string>Test format</string>
+                     </attribute>
+                     <layout class="QGridLayout" name="gridLayout_5">
+                      <item row="0" column="1">
+                       <widget class="QLabel" name="actualLabel">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::NoFrame</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Plain</enum>
+                        </property>
+                        <property name="text">
+                         <string>&lt;i&gt;Actual Settings&lt;/i&gt;</string>
+                        </property>
+                        <property name="textFormat">
+                         <enum>Qt::RichText</enum>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="2">
+                       <widget class="QLabel" name="actualLabel_2">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::NoFrame</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Plain</enum>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;My Settings&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                        <property name="textFormat">
+                         <enum>Qt::RichText</enum>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="3">
+                       <widget class="QLabel" name="nearestLabel">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::NoFrame</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Plain</enum>
+                        </property>
+                        <property name="text">
+                         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Nearest Settings&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                        <property name="textFormat">
+                         <enum>Qt::RichText</enum>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="0">
+                       <widget class="QLabel" name="actualCodecLabel">
+                        <property name="text">
+                         <string>Codec</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="1">
+                       <widget class="QComboBox" name="codecsBox"/>
+                      </item>
+                      <item row="1" column="2">
+                       <widget class="QComboBox" name="codecsBox_2"/>
+                      </item>
+                      <item row="1" column="3">
+                       <widget class="QLineEdit" name="nearestCodec">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="0">
+                       <widget class="QLabel" name="actualFreqLabel">
+                        <property name="text">
+                         <string>Frequency (Hz)</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="1">
+                       <widget class="QComboBox" name="sampleRateBox">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="2">
+                       <widget class="QComboBox" name="sampleRateBox_2">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="3">
+                       <widget class="QLineEdit" name="nearestSampleRate">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="0">
+                       <widget class="QLabel" name="actualChannelLabel">
+                        <property name="text">
+                         <string>Channels</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="1">
+                       <widget class="QComboBox" name="channelsBox"/>
+                      </item>
+                      <item row="3" column="2">
+                       <widget class="QComboBox" name="channelsBox_2"/>
+                      </item>
+                      <item row="3" column="3">
+                       <widget class="QLineEdit" name="nearestChannel">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="4" column="0">
+                       <widget class="QLabel" name="actualSampleTypeLabel">
+                        <property name="text">
+                         <string>SampleType</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="4" column="1">
+                       <widget class="QComboBox" name="sampleTypesBox"/>
+                      </item>
+                      <item row="4" column="2">
+                       <widget class="QComboBox" name="sampleTypesBox_2"/>
+                      </item>
+                      <item row="4" column="3">
+                       <widget class="QLineEdit" name="nearestSampleType">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="5" column="0">
+                       <widget class="QLabel" name="actualSampleSizeLabel">
+                        <property name="text">
+                         <string>Sample size (bits)</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="5" column="1">
+                       <widget class="QComboBox" name="sampleSizesBox"/>
+                      </item>
+                      <item row="5" column="2">
+                       <widget class="QComboBox" name="sampleSizesBox_2"/>
+                      </item>
+                      <item row="5" column="3">
+                       <widget class="QLineEdit" name="nearestSampleSize">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="6" column="0">
+                       <widget class="QLabel" name="actualEndianLabel">
+                        <property name="text">
+                         <string>Endianess</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="6" column="1">
+                       <widget class="QComboBox" name="endianBox"/>
+                      </item>
+                      <item row="6" column="2">
+                       <widget class="QComboBox" name="endianBox_2"/>
+                      </item>
+                      <item row="6" column="3">
+                       <widget class="QLineEdit" name="nearestEndian">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="7" column="1">
+                       <widget class="QPushButton" name="testButton">
+                        <property name="text">
+                         <string>Test</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="7" column="2">
+                       <widget class="QPushButton" name="MyAudioSetButton">
+                        <property name="text">
+                         <string>Set Cfg</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="7" column="3">
+                       <widget class="QLabel" name="testResult">
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="8" column="0" colspan="4">
+                       <widget class="QLabel" name="label_2">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>Note: an invalid codec 'audio/test' exists in order to allow an invalid format to be constructed, and therefore to trigger a 'nearest format' calculation.</string>
+                        </property>
+                        <property name="wordWrap">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="tab_5">
+                     <attribute name="title">
+                      <string>All formats</string>
+                     </attribute>
+                     <layout class="QVBoxLayout" name="verticalLayout_2">
+                      <item>
+                       <widget class="QPushButton" name="populateTableButton">
+                        <property name="text">
+                         <string>Populate table</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QTableWidget" name="allFormatsTable">
+                        <property name="editTriggers">
+                         <set>QAbstractItemView::NoEditTriggers</set>
+                        </property>
+                        <property name="dragDropOverwriteMode">
+                         <bool>false</bool>
+                        </property>
+                        <property name="selectionMode">
+                         <enum>QAbstractItemView::NoSelection</enum>
+                        </property>
+                        <property name="selectionBehavior">
+                         <enum>QAbstractItemView::SelectItems</enum>
+                        </property>
+                        <property name="textElideMode">
+                         <enum>Qt::ElideNone</enum>
+                        </property>
+                        <property name="sortingEnabled">
+                         <bool>false</bool>
+                        </property>
+                        <property name="wordWrap">
+                         <bool>false</bool>
+                        </property>
+                        <property name="cornerButtonEnabled">
+                         <bool>false</bool>
+                        </property>
+                        <attribute name="horizontalHeaderHighlightSections">
+                         <bool>false</bool>
+                        </attribute>
+                        <attribute name="verticalHeaderVisible">
+                         <bool>false</bool>
+                        </attribute>
+                        <attribute name="verticalHeaderHighlightSections">
+                         <bool>false</bool>
+                        </attribute>
+                        <column>
+                         <property name="text">
+                          <string>Codec</string>
+                         </property>
+                         <property name="textAlignment">
+                          <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+                         </property>
+                        </column>
+                        <column>
+                         <property name="text">
+                          <string>Frequency (Hz)</string>
+                         </property>
+                         <property name="textAlignment">
+                          <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+                         </property>
+                        </column>
+                        <column>
+                         <property name="text">
+                          <string>Channels</string>
+                         </property>
+                         <property name="textAlignment">
+                          <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+                         </property>
+                        </column>
+                        <column>
+                         <property name="text">
+                          <string>Sample type</string>
+                         </property>
+                         <property name="textAlignment">
+                          <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+                         </property>
+                        </column>
+                        <column>
+                         <property name="text">
+                          <string>Sample size (bits)</string>
+                         </property>
+                         <property name="textAlignment">
+                          <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+                         </property>
+                        </column>
+                        <column>
+                         <property name="text">
+                          <string>Endianness</string>
+                         </property>
+                         <property name="textAlignment">
+                          <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+                         </property>
+                        </column>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="tab_6">
+                     <attribute name="title">
+                      <string>Page</string>
+                     </attribute>
+                     <widget class="QScrollArea" name="scrollArea_3">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>431</width>
+                        <height>351</height>
+                       </rect>
+                      </property>
+                      <property name="widgetResizable">
+                       <bool>true</bool>
+                      </property>
+                      <widget class="QWidget" name="scrollAreaWidgetContents_3">
+                       <property name="geometry">
+                        <rect>
+                         <x>0</x>
+                         <y>0</y>
+                         <width>429</width>
+                         <height>349</height>
+                        </rect>
+                       </property>
+                       <widget class="QGroupBox" name="groupBox">
+                        <property name="geometry">
+                         <rect>
+                          <x>9</x>
+                          <y>9</y>
+                          <width>411</width>
+                          <height>331</height>
+                         </rect>
+                        </property>
+                        <property name="title">
+                         <string>GroupBox</string>
+                        </property>
+                        <widget class="QComboBox" name="AudioDevCBox_2">
+                         <property name="geometry">
+                          <rect>
+                           <x>10</x>
+                           <y>30</y>
+                           <width>161</width>
+                           <height>23</height>
+                          </rect>
+                         </property>
+                        </widget>
+                        <widget class="QLabel" name="label_8">
+                         <property name="geometry">
+                          <rect>
+                           <x>180</x>
+                           <y>30</y>
+                           <width>71</width>
+                           <height>20</height>
+                          </rect>
+                         </property>
+                         <property name="text">
+                          <string>Input Device</string>
+                         </property>
+                        </widget>
+                        <widget class="QGroupBox" name="groupBox_2">
+                         <property name="geometry">
+                          <rect>
+                           <x>10</x>
+                           <y>110</y>
+                           <width>71</width>
+                           <height>201</height>
+                          </rect>
+                         </property>
+                         <property name="title">
+                          <string>Input</string>
+                         </property>
+                         <widget class="QLabel" name="label_6">
+                          <property name="geometry">
+                           <rect>
+                            <x>40</x>
+                            <y>170</y>
+                            <width>21</width>
+                            <height>21</height>
+                           </rect>
+                          </property>
+                          <property name="layoutDirection">
+                           <enum>Qt::LeftToRight</enum>
+                          </property>
+                          <property name="text">
+                           <string>Lvl</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                          </property>
+                         </widget>
+                         <widget class="QLabel" name="label_7">
+                          <property name="geometry">
+                           <rect>
+                            <x>10</x>
+                            <y>170</y>
+                            <width>21</width>
+                            <height>21</height>
+                           </rect>
+                          </property>
+                          <property name="text">
+                           <string>Vol</string>
+                          </property>
+                         </widget>
+                         <widget class="QProgressBar" name="AudioLevelBarIN">
+                          <property name="geometry">
+                           <rect>
+                            <x>40</x>
+                            <y>20</y>
+                            <width>16</width>
+                            <height>141</height>
+                           </rect>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="mouseTracking">
+                           <bool>false</bool>
+                          </property>
+                          <property name="value">
+                           <number>10</number>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                          </property>
+                          <property name="textVisible">
+                           <bool>true</bool>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                          <property name="invertedAppearance">
+                           <bool>false</bool>
+                          </property>
+                         </widget>
+                         <widget class="QSlider" name="AudioLevelSliderIN">
+                          <property name="geometry">
+                           <rect>
+                            <x>10</x>
+                            <y>20</y>
+                            <width>16</width>
+                            <height>141</height>
+                           </rect>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </widget>
+                        <widget class="QGroupBox" name="groupBox_3">
+                         <property name="geometry">
+                          <rect>
+                           <x>80</x>
+                           <y>110</y>
+                           <width>71</width>
+                           <height>201</height>
+                          </rect>
+                         </property>
+                         <property name="title">
+                          <string>Output</string>
+                         </property>
+                         <widget class="QLabel" name="label_9">
+                          <property name="geometry">
+                           <rect>
+                            <x>40</x>
+                            <y>170</y>
+                            <width>21</width>
+                            <height>21</height>
+                           </rect>
+                          </property>
+                          <property name="layoutDirection">
+                           <enum>Qt::LeftToRight</enum>
+                          </property>
+                          <property name="text">
+                           <string>Lvl</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                          </property>
+                         </widget>
+                         <widget class="QLabel" name="label_10">
+                          <property name="geometry">
+                           <rect>
+                            <x>10</x>
+                            <y>170</y>
+                            <width>21</width>
+                            <height>21</height>
+                           </rect>
+                          </property>
+                          <property name="text">
+                           <string>Vol</string>
+                          </property>
+                         </widget>
+                         <widget class="QProgressBar" name="AudioLevelBarOUT">
+                          <property name="geometry">
+                           <rect>
+                            <x>40</x>
+                            <y>20</y>
+                            <width>16</width>
+                            <height>141</height>
+                           </rect>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="mouseTracking">
+                           <bool>false</bool>
+                          </property>
+                          <property name="value">
+                           <number>10</number>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                          </property>
+                          <property name="textVisible">
+                           <bool>true</bool>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                          <property name="invertedAppearance">
+                           <bool>false</bool>
+                          </property>
+                         </widget>
+                         <widget class="QSlider" name="AudioLevelSliderOUT">
+                          <property name="geometry">
+                           <rect>
+                            <x>10</x>
+                            <y>20</y>
+                            <width>16</width>
+                            <height>141</height>
+                           </rect>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </widget>
+                        <widget class="QComboBox" name="AudioDevCBox_3">
+                         <property name="geometry">
+                          <rect>
+                           <x>10</x>
+                           <y>60</y>
+                           <width>161</width>
+                           <height>23</height>
+                          </rect>
+                         </property>
+                        </widget>
+                        <widget class="QLabel" name="label_11">
+                         <property name="geometry">
+                          <rect>
+                           <x>180</x>
+                           <y>60</y>
+                           <width>81</width>
+                           <height>20</height>
+                          </rect>
+                         </property>
+                         <property name="text">
+                          <string>Output Device</string>
+                         </property>
+                        </widget>
+                        <widget class="QGroupBox" name="groupBox_4">
+                         <property name="geometry">
+                          <rect>
+                           <x>160</x>
+                           <y>110</y>
+                           <width>241</width>
+                           <height>111</height>
+                          </rect>
+                         </property>
+                         <property name="title">
+                          <string>Handle Audio Stream</string>
+                         </property>
+                         <widget class="QCheckBox" name="check_INOUT">
+                          <property name="geometry">
+                           <rect>
+                            <x>10</x>
+                            <y>80</y>
+                            <width>121</width>
+                            <height>21</height>
+                           </rect>
+                          </property>
+                          <property name="text">
+                           <string>Connect IN to OUT</string>
+                          </property>
+                         </widget>
+                         <widget class="QCheckBox" name="check_OUT_Stream">
+                          <property name="geometry">
+                           <rect>
+                            <x>10</x>
+                            <y>50</y>
+                            <width>111</width>
+                            <height>21</height>
+                           </rect>
+                          </property>
+                          <property name="text">
+                           <string>Write To Stream</string>
+                          </property>
+                         </widget>
+                         <widget class="QCheckBox" name="check_IN_Stream">
+                          <property name="geometry">
+                           <rect>
+                            <x>10</x>
+                            <y>20</y>
+                            <width>111</width>
+                            <height>21</height>
+                           </rect>
+                          </property>
+                          <property name="text">
+                           <string>Play From Stream</string>
+                          </property>
+                         </widget>
+                         <widget class="QPushButton" name="inpHandleButton">
+                          <property name="enabled">
+                           <bool>true</bool>
+                          </property>
+                          <property name="geometry">
+                           <rect>
+                            <x>150</x>
+                            <y>70</y>
+                            <width>75</width>
+                            <height>23</height>
+                           </rect>
+                          </property>
+                          <property name="text">
+                           <string>Pause Rec</string>
+                          </property>
+                         </widget>
+                         <widget class="QPushButton" name="startCapture">
+                          <property name="geometry">
+                           <rect>
+                            <x>150</x>
+                            <y>30</y>
+                            <width>75</width>
+                            <height>23</height>
+                           </rect>
+                          </property>
+                          <property name="text">
+                           <string>Start</string>
+                          </property>
+                         </widget>
+                        </widget>
+                        <widget class="QAudioLevel" name="audioLevel" native="true">
+                         <property name="geometry">
+                          <rect>
+                           <x>170</x>
+                           <y>240</y>
+                           <width>211</width>
+                           <height>31</height>
+                          </rect>
+                         </property>
+                        </widget>
+                       </widget>
+                      </widget>
+                     </widget>
+                    </widget>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_3">
+           <attribute name="title">
+            <string>Eth</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_7">
+            <item row="0" column="0">
+             <widget class="QScrollArea" name="scrollArea_4">
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Plain</enum>
+              </property>
+              <property name="lineWidth">
+               <number>0</number>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_4">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>626</width>
+                 <height>492</height>
+                </rect>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_6">
+                <item row="0" column="0">
+                 <widget class="QGroupBox" name="groupBox_6">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>100</width>
+                    <height>120</height>
+                   </size>
+                  </property>
+                  <property name="title">
+                   <string>Stream Handle</string>
+                  </property>
+                  <widget class="QPushButton" name="startRcvEthButton">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>30</y>
+                     <width>75</width>
+                     <height>23</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>Start Rcv</string>
+                   </property>
+                  </widget>
+                  <widget class="QPushButton" name="startSendEthButton">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>60</y>
+                     <width>75</width>
+                     <height>23</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>Start Send</string>
+                   </property>
+                  </widget>
+                  <widget class="QPushButton" name="stopSendEthButton">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>90</y>
+                     <width>75</width>
+                     <height>23</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>Stop Send</string>
+                   </property>
+                  </widget>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QGroupBox" name="groupBox_5">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>190</width>
+                    <height>120</height>
+                   </size>
+                  </property>
+                  <property name="title">
+                   <string>Stream Config</string>
+                  </property>
+                  <widget class="QPushButton" name="setEthButton">
+                   <property name="geometry">
+                    <rect>
+                     <x>90</x>
+                     <y>90</y>
+                     <width>91</width>
+                     <height>23</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>Set Eth Cfg</string>
+                   </property>
+                  </widget>
+                  <widget class="QLineEdit" name="setRemotePort">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>40</y>
+                     <width>60</width>
+                     <height>20</height>
+                    </rect>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>60</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <kerning>true</kerning>
+                    </font>
+                   </property>
+                   <property name="acceptDrops">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string extracomment="write here Host Addr like a 192.168.7.35"/>
+                   </property>
+                   <property name="placeholderText">
+                    <string/>
+                   </property>
+                  </widget>
+                  <widget class="QLineEdit" name="setRemoteAddr">
+                   <property name="geometry">
+                    <rect>
+                     <x>90</x>
+                     <y>40</y>
+                     <width>90</width>
+                     <height>20</height>
+                    </rect>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>90</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="acceptDrops">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string extracomment="write here Host Addr like a 192.168.7.35"/>
+                   </property>
+                   <property name="placeholderText">
+                    <string/>
+                   </property>
+                  </widget>
+                  <widget class="QLineEdit" name="setLocalPort">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>90</y>
+                     <width>60</width>
+                     <height>20</height>
+                    </rect>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>60</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <kerning>true</kerning>
+                    </font>
+                   </property>
+                   <property name="acceptDrops">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string extracomment="write here Host Addr like a 192.168.7.35"/>
+                   </property>
+                   <property name="placeholderText">
+                    <string/>
+                   </property>
+                  </widget>
+                  <widget class="QLabel" name="label_4">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>70</y>
+                     <width>60</width>
+                     <height>16</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>Local Port</string>
+                   </property>
+                  </widget>
+                  <widget class="QLabel" name="label_3">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>20</y>
+                     <width>60</width>
+                     <height>16</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>Remote Port</string>
+                   </property>
+                  </widget>
+                  <widget class="QLabel" name="label_5">
+                   <property name="geometry">
+                    <rect>
+                     <x>90</x>
+                     <y>20</y>
+                     <width>50</width>
+                     <height>16</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>Remote IP</string>
+                   </property>
+                  </widget>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <spacer name="horizontalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>303</width>
+                    <height>88</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="1" column="0" colspan="3">
+                 <widget class="QPlainTextEdit" name="rcvEthWndw_3">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>100</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_4">
+           <attribute name="title">
+            <string>Page</string>
+           </attribute>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>656</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QAudioLevel</class>
+   <extends>QWidget</extends>
+   <header location="global">qaudiolevel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>10</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>
