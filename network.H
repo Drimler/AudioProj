@@ -58,8 +58,8 @@ private slots:
     void sendDatagram();
 
 public slots:
-    void startSender();
-    void stopSender();
+    void startSender( bool state );
+//    void stopSender();
     void restartSender();
     void sendData( QByteArray data );
 
@@ -82,7 +82,7 @@ class EthAudio : protected QObject
     Q_OBJECT
 
 public:
-    EthAudio(QObject *parent = 0);
+    EthAudio(QObject *parent = 0, quint16 portL = 44000);
     ~EthAudio();
 
     void start();
@@ -112,6 +112,9 @@ public slots:
     void writeToBuf( QByteArray data );
     void startRcver( bool state );
     void startSender( bool state );
+
+private slots:
+    void stateRcvSend();
 
 signals:
     void RcvEthAudioData( QByteArray );

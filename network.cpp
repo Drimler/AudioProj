@@ -124,37 +124,35 @@ Sender::~Sender() {
     delete timer;
 }
 
-void Sender::startSender() {
+void Sender::startSender( bool state ) {
+    stopSender();
 
-//    udpSocket = new QUdpSocket(this);
-//    udpSocket->bind(QHostAddress::AnyIPv4, localPort, QUdpSocket::ShareAddress);
-//    udpSocket->joinMulticastGroup(groupAddress);
+    if ( state == true ) {
+        timer = new QTimer(this);
+        sendDataBuf = new QByteArray;
+        messageNo = 1;
 
-    timer = new QTimer(this);
-    sendDataBuf = new QByteArray;
-    messageNo = 1;
+        connect(timer, SIGNAL(timeout()), this, SLOT(sendDatagram()));
 
-    connect(timer, SIGNAL(timeout()), this, SLOT(sendDatagram()));
+        startSending();
 
-    startSending();
-
-    sendStarted = true;
-    emit connected( true );
+        sendStarted = true;
+    }
+    emit connected( sendStarted );
 }
 void Sender::stopSender() {
     if ( sendStarted == true ) {
+        sendStarted = false;
         stopSending();
-//        udpSocket->disconnectFromHost();
-//        delete udpSocket;
         delete sendDataBuf;
         delete timer;
-        sendStarted = false;
+        sendDataBuf = NULL;
+        timer = NULL;
     }
-    emit connected( false );
 }
 void Sender::restartSender() {
-    stopSender();
-    startSender();
+//    stopSender();
+    startSender( true );
 }
 
 void Sender::ttlChanged(int newTtl)
@@ -208,30 +206,32 @@ void Sender::sendData( QByteArray data ) {
 }
 
 
-EthAudio::EthAudio(QObject *parent)
+EthAudio::EthAudio(QObject *parent, quint16 portL)
     : QObject(parent)
     , ethStarted(false)
     , senderStarted(false)
     , rcverStarted(false)
-    , localPort(44000)
+    , localPort(portL)
 {
     QString ipAddress;
     QList<QHostAddress> ipAddressesList = QNetworkInterface::allAddresses();
     // use the first non-localhost IPv4 address
-    for (int i = 0; i < ipAddressesList.size(); ++i) {
-        if (ipAddressesList.at(i) != QHostAddress::LocalHost &&
-            ipAddressesList.at(i).toIPv4Address()) {
-            ipAddress = ipAddressesList.at(i).toString();
-            break;
+    for ( int i = 0; i < ipAddressesList.size(); ++i )
+    {
+        if ( ipAddressesList.at(i) != QHostAddress::LocalHost &&
+             ipAddressesList.at(i).toIPv4Address() )
+        {
+             ipAddress = ipAddressesList.at(i).toString();
+             break;
         }
     }
     // if we did not find one, use IPv4 localhost
-    if (ipAddress.isEmpty())
-        ipAddress = QHostAddress(QHostAddress::LocalHost).toString();
+    if ( ipAddress.isEmpty() )
+        ipAddress = QHostAddress( QHostAddress::LocalHost ).toString();
 
     localAddr = ipAddress;
 
-    localAddrH = QHostAddress(localAddr);
+    localAddrH = QHostAddress( localAddr );
     qWarning() << "LocalHost addres -> " << localAddr;
 
     udpSocket = new QUdpSocket(this);
@@ -241,7 +241,7 @@ EthAudio::EthAudio(QObject *parent)
         ~EthAudio();
         return;
     }
-    bool socketState = udpSocket->bind(localAddrH, localPort, QUdpSocket::ShareAddress);
+    bool socketState = udpSocket->bind( localAddrH, localPort, QUdpSocket::ShareAddress );
     if ( socketState == true )
         qWarning() << "Error occured when udpSocket binded";
 }
@@ -260,26 +260,10 @@ void EthAudio::setEthCfg( quint16 srcPort, quint16 dstPort, QString dstAddr ) {
         return;
     }
 
-    if ( senderStarted == true && sender ) {
-        if ( sender->isStarted() == false ) {
-            emit errorMsg("Error, Sender wasn't started");
-            return;
-        }
-        startSender(false);
-    }
+    startEthAudio(false);
 
-    if ( rcverStarted == true && receiver ) {
-        if ( receiver->isStarted() == false ) {
-            emit errorMsg("Error, Receiver wasn't started");
-            return;
-        }
-        startRcver(false);
-    }
-
+//at here we will need to set timeout that this task can be running for wait sender and rcver statuses
     while ( senderStarted || rcverStarted ) {} //wait when Sender & Rcver would disconnected
-
-//    startSender(true);
-//    startRcver(true);
 
     localPort = srcPort;
     remotePort = dstPort;
@@ -291,21 +275,49 @@ void EthAudio::setEthCfg( quint16 srcPort, quint16 dstPort, QString dstAddr ) {
         emit errorMsg("Error occurred when udpSocket binding");
         return;
     }
-    startSender(true);
-    startRcver(true);
+
+    startEthAudio(true);
 }
 
 void EthAudio::startEthAudio( bool state ) {
 
     if ( rcverStarted == true ) {
-        rcverStarted = false;
-        receiver->startReceiver(false);
+//        rcverStarted = false;
+
+        if ( receiver != NULL ) {
+            if ( receiver->isStarted() ) {
+                receiver->startReceiver(false);
+            }
+        } else if ( threadEthRcv != NULL ) {
+            if ( threadEthRcv->isRunning() ) {
+                threadEthRcv->quit();
+            }
+        }
+        while ( rcverStarted == true ) {}
+
         delete receiver;
+        delete threadEthRcv;
+        receiver = NULL;
+        threadEthRcv = NULL;
     }
     if ( senderStarted == true ) {
-        senderStarted = false;
-        sender->stopSender();
+//        senderStarted = false;
+
+        if ( sender != NULL ) {
+            if ( sender->isStarted() ) {
+                sender->startSender(false);
+            }
+        } else if ( threadEthSend != NULL ) {
+            if ( threadEthSend->isRunning() ) {
+                threadEthSend->quit();
+            }
+        }
+        while ( senderStarted == true ) {}
+
         delete sender;
+        delete threadEthSend;
+        sender = NULL;
+        threadEthSend = NULL;
     }
 
     if ( state == true ) {
@@ -319,12 +331,22 @@ void EthAudio::startEthAudio( bool state ) {
         receiver->moveToThread(threadEthRcv);
         sender->moveToThread(threadEthSend);
 
+//        connect(threadEthRcv,SIGNAL(started()),clientRcv,SLOT(start())); // когда поток стартует, то начать выполнение работы нашего класса
+        connect(receiver,SIGNAL(finished()),threadEthRcv,SLOT(quit())); // когда работа будет завершена, завершить поток
+        connect(receiver,SIGNAL(finished()),receiver,SLOT(deleteLater())); // когда работа будет завершена, удалить наш экземпляр класса
+        connect(threadEthRcv,SIGNAL(finished()),threadEthRcv,SLOT(deleteLater())); // когда поток остановится, удалить его
+
+//        connect(threadEthSend,SIGNAL(started()),sender,SLOT(start())); // когда поток стартует, то начать выполнение работы нашего класса
+        connect(sender,SIGNAL(finished()),threadEthSend,SLOT(quit())); // когда работа будет завершена, завершить поток
+        connect(sender,SIGNAL(finished()),sender,SLOT(deleteLater())); // когда работа будет завершена, удалить наш экземпляр класса
+        connect(threadEthSend,SIGNAL(finished()),threadEthSend,SLOT(deleteLater())); // когда поток остановится, удалить его
+
         connect( receiver, SIGNAL(RcvEthData(QByteArray)),this, SLOT(RcvEthData(QByteArray)) );
         connect( this, SIGNAL(sendData(QByteArray)), sender, SLOT(sendData(QByteArray)));//,Qt::DirectConnection );
 
-//        connect( clientEthAudio, SIGNAL(connectedRcv(bool)), this, SLOT(streamINstate(bool)));//,Qt::DirectConnection);
-//        connect( clientEthAudio, SIGNAL(connectedSend(bool)), this, SLOT(streamOUTstate(bool)));//,Qt::DirectConnection);
-//        connect( clientEthAudio, SIGNAL(canWriteBuff(bool)), this, SLOT(writeEthBuffState(bool)));//,Qt::DirectConnection);
+//        connect( receiver, SIGNAL(connected(bool)), this, SLOT(connectedRcv(bool)));
+//        connect( sender, SIGNAL(connected(bool)), this, SLOT(connectedSend(bool)));
+//        connect( sender, SIGNAL(canWriteBuff(bool)), this, SLOT(canWriteBuff(bool)));
 
     } else {
 
